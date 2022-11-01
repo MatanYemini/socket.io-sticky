@@ -60,4 +60,8 @@ describe("@socket.io/sticky", () => {
   it.skip("should work with HTTP long-polling only", (done) => {
     exec(fixture("connection.js"), { env: { TRANSPORT: "polling" } }, done);
   });
+
+  it.only("should work with multipart/form-data", (done) => {
+    exec(fixture("uploading.js"), done);
+  });
 });
